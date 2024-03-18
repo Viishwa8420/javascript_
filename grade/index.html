@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student's grade</title>
+</head>
+<body>
+    <h2>Your grade according to your score:</h2>
+  
+
+<script>
+    let n = 99;
+
+    if (n < 33){
+        document.write("You are failed.");
+    }
+    else if (n <= 55){
+        document.write("Your grade: D");
+    }
+    else if (n <= 65){
+        document.write("Your grade: C");
+    }
+    else if (n <= 75){
+        document.write("Your grade: B");
+    }
+    else if (n <= 85){
+        document.write("Your grade: B+");
+    }
+    else if (n <= 90){
+        document.write("Your grade: A");
+    }
+    else if (n <= 100){
+        document.write("Your grade: A+");
+    }
+    else {
+        document.write("Invalid number.");
+    }
+    document.write('<br>Your Score :' + n);
+</script>
+
+</body>
+</html>

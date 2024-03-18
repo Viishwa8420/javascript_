@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gross salary</title>
+</head>
+<body>
+    <script>
+
+        let BaseSalary = (parseInt(prompt("Enter your Salary :")));
+        let HRA = 10/100 * BaseSalary;
+        let  DA = 5/100 * BaseSalary;
+        let TA = 8/100 * BaseSalary;
+        
+        let Grosssalary = HRA + DA + TA + BaseSalary;
+     
+     document.write("Gross Salary is :");
+     document.write("<br>" +HRA +"+" +DA +"+" +TA +"+" +BaseSalary +" = " +Grosssalary);
+ 
+     </script>
+</body>
+</html>
