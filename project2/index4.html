@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>voting eligibility</title>
+</head>
+<body>
+    <script>
+        var n = (parseInt(prompt("Enter your age :")));
+
+        if(n <= 0 || n>=70){
+            document.write("Your age is invalid.");
+        }
+        else if(n < 18){
+            document.write("You are not eligible for voting.");
+        }
+        else
+        {
+            document.write("You are eligible for voting.");
+        }
+    </script>
+</body>
+</html>
