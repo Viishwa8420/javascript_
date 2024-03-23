@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forget password</title>
+</head>
+<body>
+    <h2>Email : vishwa11@gmail.com</h2>
+    <h4>Password : Vishwa123</h4>
+    <script>
+    var Email = "vishwa11@gmail.com";
+    var Password = "Vishwa123";
+
+    var Useremail =prompt("Enter email to change your password :");
+    if(Useremail == Email){
+        var pass = prompt("Enter new password :");
+        Email = Useremail;
+        Password = pass;
+        alert("Your password is successfully changed.")
+    }
+    else{
+        alert("User's email is invalid.")
+    }
+    document.write(`<h2 style = "color : red;">${Email}</h2>`);
+    document.write(`<h2 style = "color : red;">${Password}</h2>`);
+    </script>
+</body>
+</html>

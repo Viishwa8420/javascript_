@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount</title>
+</head>
+<body>
+    <h2>Avail Discount according to your Bill Amount :</h2>
+  
+
+<script>
+    let Bill = (parseInt(prompt("Enter your billing amount to avail discount :")));
+
+    if (Bill >= 100){
+        document.write("Congratulations..You got 20% discount.");
+    }
+    else if (Bill >= 50){
+        document.write("Congratulations..You got 10% discount.");
+    }  
+    else {
+        document.write("Sorry..No discount is available for this amount.");
+    }
+    document.write('<br>Your bill amount :' + Bill);
+</script>
+
+</body>
+</html>

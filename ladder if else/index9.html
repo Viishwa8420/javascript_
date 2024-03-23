@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greetings</title>
+</head>
+<body>
+
+<script>
+    let weight = (parseFloat(prompt("Please Enter your weight in kg :")));
+    let height = (parseFloat(prompt("Please Enter your height in meter :")));
+
+    let BMI = weight / (height * height);
+
+    if (BMI < 18.5){
+        document.write("You are underweight as per your BMI.");
+    }
+    else if ( BMI >= 18.5 && BMI < 24.9){
+        document.write("You are healthy as per your BMI.");
+    }  
+    else if ( BMI >= 25 && BMI < 29.9){
+        document.write("You are overweight as per your BMI.");
+    }  
+    else if ( BMI >= 30 && BMI < 39.9){
+        document.write("You are suffering from obesity as per your BMI.");
+    }  
+    else{
+        document.write("You are in high risk of obesity as per your BMI.");
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student's grade</title>
+</head>
+<body>
+    <h2>Your letter grade according to your numerical grade:</h2>
+  
+
+<script>
+    let n = (parseInt(prompt("Enter your numerical grade :")));
+
+    if (n == 0){
+        document.write("You are failed...Your grade: F");
+    }
+    else if (n == 4){
+        document.write("You have Passed your examinations Successfully...Your grade: D");
+    }
+    else if (n == 5){
+        document.write("Your perfomance is Average...Your grade: C");
+    }
+    else if (n == 6){
+        document.write("Your perfomance is Above Average...Your grade: B");
+    }
+    else if (n == 7){
+        document.write("Your perfomance is Good...Your grade: B+");
+    }
+    else if (n == 8){
+        document.write("Your perfomance is Very good...Your grade: A");
+    }
+    else if (n == 9){
+        document.write("Your perfomance is Excellent...Your grade: A+");
+    }
+    else if (n == 10){
+        document.write("Your perfomance is Outstanding...Your grade: O");
+    }
+    else {
+        document.write("Invalid number.");
+    }
+    document.write('<br>Your numerical grade :' + n);
+</script>
+
+</body>
+</html>
