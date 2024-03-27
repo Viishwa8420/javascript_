@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>payment options</title>
+</head>
+<body>
+    <script>
+
+        var payment = (prompt("Please select a payment option from\n UPI\n Bank transfer\n card\n Net banking\n Enter your choice for a payment method :"));
+
+        switch(payment){
+            case 'UPI' :
+                document.write("pay via paytm/Gpay.");
+                break;
+            case 'Bank transfer' :
+                document.write("pay via Bank transfer.");
+                break;
+            case 'card' :
+                document.write("pay via credit/debit card.");
+                break;
+            case 'Net banking' :
+                document.write("pay via Net banking.");
+                break;
+            default:
+                document.write("Please,enter a valid payment method : ");
+
+        }
+    </script>
+</body>
+</html>

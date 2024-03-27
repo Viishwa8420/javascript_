@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recharge</title>
+</head>
+<body>
+    
+    <script>
+        var Lan = parseInt(prompt("Press 1 for English \nPress 2 for Hindi \nPress 3 for Gujarati \nEnter your choice for Language :"));
+        
+        switch(Lan) {
+            case 1:
+
+                var a = parseInt(prompt("Press 1 for Internet Recharge \nPress 2 for Top-up Recharge \nPress 3 for Special Recharge \nEnter your choice for Recharge :"));
+
+                switch(a) {
+                    case 1:
+                        document.write("You have successfully done Internet Recharge.");
+                        break;
+                    case 2:
+                        document.write("You have successfully done Top-up Recharge.");
+                        break;
+                    case 3:
+                        document.write("You have successfully done Special Recharge.");
+                        break;
+                    default:
+                        document.write("Please enter a valid Recharge plan.");
+                }
+                break;
+
+            case 2:
+
+                var b = parseInt(prompt("Internet Recharge के लिए 1 दबाएं \nTop-up Recharge के लिए 2 दबाएं \nSpecial Recharge के लिए 3 दबाएं \nEnter your choice for Recharge :"));
+
+                switch(b) {
+                    case 1:
+                        document.write("आपने सफलतापूर्वक Internet Recharge कर लिया है।");
+                        break;
+                    case 2:
+                        document.write("आपने सफलतापूर्वक Top-up Recharge कर लिया है।");
+                        break;
+                    case 3:
+                        document.write("आपने सफलतापूर्वक Special Recharge कर लिया है।");
+                        break;
+                    default:
+                        document.write("कृपया एक वैध Recharge योजना दर्ज करें।");
+                }
+                break;
+
+            case 3:
+              
+                var c = parseInt(prompt("Internet Recharge માટે 1 દબાવો \nTop-up Recharge માટે 2 દબાવો \nSpecial Recharge માટે 3 દબાવો \nEnter your choice for Recharge :"));
+
+                switch(c) {
+                    case 1:
+                        document.write("તમે સફળતાપૂર્વક Internet Recharge કર્યું છે।");
+                        break;
+                    case 2:
+                        document.write("તમે સફળતાપૂર્વક Top-up Recharge કર્યું છે।");
+                        break;
+                    case 3:
+                        document.write("તમે સફળતાપૂર્વક Special Recharge કર્યું છે।");
+                        break;
+                    default:
+                        document.write("કૃપા કરીને માન્ય Recharge યોજના દાખલ કરો।");
+                }
+                break;
+
+            default:
+                document.write("Please enter a valid language.");
+        }
+    </script>
+</body>
+</html>
