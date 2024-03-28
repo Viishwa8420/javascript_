@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>basic cal. ladder if else</title>
+  </head>
+  <body>
+    <script>
+      let a = parseInt(prompt("Enter the first number:"));
+      let b = parseInt(prompt("Enter the second number:"));
+      let choice = prompt("Enter the operation (+, -, *, /):");
+
+      if (choice === "+") {
+        document.write(a + " + " + b + " = " + (a + b));
+      } else if (choice === "-") {
+        document.write(a + " - " + b + " = " + (a - b));
+      } else if (choice === "*") {
+        document.write(a + " * " + b + " = " + a * b);
+      } else if (choice === "/") {
+        if (b === 0) {
+          document.write("Cannot divide by zero");
+        } else {
+          document.write(a + " / " + b + " = " + a / b);
+        }
+      } else {
+        document.write("Invalid operator");
+      }
+    </script>
+  </body>
+</html>

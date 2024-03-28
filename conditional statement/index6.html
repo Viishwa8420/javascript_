@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student's grade</title>
+</head>
+<body>
+    <h2>Your grade according to your score:</h2>
+  
+
+<script>
+    var phy = (parseInt(prompt("Enter your marks in physics :")));
+    var chemi = (parseInt(prompt("Enter your marks in chemistry :")));
+    var bio = (parseInt(prompt("Enter your marks in biology :")));
+    var maths = (parseInt(prompt("Enter your marks in mathematics :")));
+    var com = (parseInt(prompt("Enter your marks in computer :")));
+
+    var percentage = (phy + chemi + bio + maths + com) / 5;
+
+    if (percentage >= 90){
+        document.write("Your grade: A");
+    }
+    else if (percentage >= 80){
+        document.write("Your grade: B");
+    }
+    else if (percentage >= 70){
+        document.write("Your grade: C");
+    }
+    else if (percentage >= 60){
+        document.write("Your grade: D");
+    }
+    else if (percentage >= 50){
+        document.write("Your grade: E");
+    }
+    else {
+        document.write("You are fail.");
+    }
+    document.write('<br>Your Score :' + percentage);
+</script>
+
+</body>
+</html>

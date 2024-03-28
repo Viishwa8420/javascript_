@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>validity of triangle</title>
+  </head>
+  <body>
+    <script>
+     let angle1 = (parseFloat(prompt("Enter value for angle 1:")));
+            let angle2 = (parseFloat(prompt("Enter value for angle 2:")));
+            let angle3 = (parseFloat(prompt("Enter value for angle 3:")));
+
+            if (angle1 + angle2 + angle3 === 180 && angle1 > 0 && angle2 > 0 && angle3 > 0) {
+                document.write("Valid triangle!");
+            } else {
+                document.write("Invalid triangle!");
+            }
+    </script>
+  </body>
+</html>

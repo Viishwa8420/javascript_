@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>basic cal. switch case</title>
+  </head>
+  <body>
+    <script>
+      let a = parseInt(prompt("Enter the first number:"));
+      let b = parseInt(prompt("Enter the second number:"));
+      let choice = prompt("Enter the operation (+, -, *, /):");
+
+      switch (choice) {
+        case "+":
+          document.write(a + " + " + b + " = " + (a + b));
+          break;
+        case "-":
+          document.write(a + " - " + b + " = " + (a - b));
+          break;
+        case "*":
+          document.write(a + " * " + b + " = " + a * b);
+          break;
+        case "/":
+          if (b === 0) {
+            document.write("Cannot divide by zero");
+          } else {
+            document.write(a + " / " + b + " = " + a / b);
+          }
+          break;
+        default:
+          document.write("invalid input.")
+      }
+    </script>
+  </body>
+</html>
