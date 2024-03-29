@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 to N</title>
+</head>
+<body>
+    <script>
+     
+        var term = parseInt(prompt("Enter any no. of terms you want :"));
+        
+     
+        var n1 = 0, n2 = 1, n3, i = 1,sum = 0;
+
+        console.log("Fibonacci Series:");
+
+        do {
+            console.log(n1);
+             sum += n1;
+             n3 = n1 + n2;
+             n1 = n2;
+             n2 = n3;
+             i++;
+           
+
+           } 
+           while (i <= term);
+           console.log("Sum of all Fibonacci numbers : " +sum);
+    </script>
+</body>
+</html>
