@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+</head>
+
+<body>
+
+    <script>
+
+        let a = (parseInt(prompt("Enter Your Number a: ")));
+        let b = (parseInt(prompt("Enter Your Number b: ")));
+
+        let choice = prompt("Select Your Choice for  (+, -, *, /):");
+        
+        function Calculator(a, b, choice) {
+            switch (choice) {
+                case '+':
+                    return a + b;
+                case '-':
+                    return a - b;
+                case '*':
+                    return a * b;
+                case '/':
+                    return a / b;
+
+                default:
+                    return " Please choose +, -, *, or /.";
+            }
+        }
+        console.log("a is : " + a);
+        console.log("b is : " + b);
+
+        console.log("Answer : " + Calculator(a, b, choice));
+    </script>
+</body>
+
+</html>

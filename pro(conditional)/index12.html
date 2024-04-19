@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pattern</title>
+</head>
+<body>
+    <script>
+     let i,j;
+     let count=1
+     let alp=65
+     let n=5;
+     for (i = 1; i <= n; i++) {
+            for (j = 1; j <= i; j++) {
+                if (i % 2 == 0) {
+                    if (j % 2 == 0) {
+                        document.write(count++);
+                    } else {
+                        document.write(String.fromCharCode(alp++));
+                    }
+                } else {
+                    if (j % 2 == 0) {
+                        document.write(String.fromCharCode(alp++));
+                    } else {
+                        document.write(count++);
+                    }
+                }
+                document.write("   ");
+            }
+            document.write("<br>");
+        }
+    </script>
+</body>
+</html>

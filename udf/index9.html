@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+</head>
+
+<body>
+
+    <script>
+        let angle1 = parseFloat(prompt("Enter the first angle:"));
+        let angle2 = parseFloat(prompt("Enter the second angle:"));
+        let angle3 = parseFloat(prompt("Enter the third angle:"));
+
+        let total = angle1 + angle2 + angle3;
+
+        function sum(total) {
+            if (total === 180) {
+                return "The angle form a valid triangle.";
+            } else {
+                return "The angle do not form a valid triangle.";
+            }
+        }
+
+        console.log("angle-1 is : " + angle1);
+        console.log("angle-2 is : " + angle2);
+        console.log("angle-3 is : " + angle3);
+
+        console.log("Answer : " + sum(total) );
+
+    </script>
+</body>
+
+</html>

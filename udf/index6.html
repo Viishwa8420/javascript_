@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+</head>
+<body>
+    <script>
+
+        let a = parseInt(prompt("Enter Your First Value: "));
+        let b = parseInt(prompt("Enter Your Second Value: "));
+
+
+        function swap(a, b) {
+            console.log("Before swapping:");
+            console.log("a =", a);
+            console.log("b =", b);
+
+            let c = a;
+            a = b;
+            b = c;
+
+            console.log("After swapping:");
+            console.log("a =", a);
+            console.log("b =", b);
+        }
+        swap(a, b);
+    </script>
+</body>
+</html>

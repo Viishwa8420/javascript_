@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sum of first & last digit</title>
+</head>
+
+<body>
+    <script>
+        let last, sum = 0
+        let n = parseInt(prompt("Enter any number : "))
+        last = n % 10;
+        while (n > 9) {
+            n = n / 10;
+        }
+        sum = n  + last
+        console.log("Sum of first and last digit of number is : " +sum);
+
+    </script>
+
+</body>
+
+</html>
