@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slider</title>
+</head>
+<body>
+    <style>
+        .slider-show{
+            max-width:1140px;
+            margin:0 auto;
+        }
+        .slider{
+            width:100%;
+            height:500px;
+            display:none;
+        }
+        .slider img{
+            width:100%;
+            height:100%;
+            object-fit: cover;
+        }
+
+    </style>
+    <div class="slider-show container">
+
+    <h2 style="text-align: center; color: rgb(79, 17, 137);">Traveller's Guide</h2>
+    <div class="slider fade"><img src="img/pic1.jpeg"></div>
+    <div class="slider fade"><img src="img/pic2.jpg"></div>
+    <div class="slider fade"><img src="img/pic3.jpg"></div>
+    </div>
+</body>
+<script>
+    let sliderindex = 0;
+    slides();
+
+    function slides() {
+        let i;
+        let slide = document.getElementsByClassName("slider");
+        for (i=0; i < slide.length; i++){
+            slide[i].style.display = "none";
+        }
+        sliderindex++;
+        if(sliderindex > slide.length){
+            sliderindex = 1
+        }
+        slide[sliderindex - 1].style.display = "block";
+        setTimeout(slides,2000);
+    }
+   
+</script>
+</html>
