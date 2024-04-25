@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up form</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .img-container {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .bgimg {
+            position: absolute;
+            left:90px;
+            top: 0;
+            object-fit: contain;
+            width: 100%;
+            height: 100%;
+        }
+
+        .inner-container {
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            top: calc(50vh - 200px);
+            left: calc(50vw - 200px);
+            overflow: hidden;
+        }
+        .box {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            font-family: Helvetica;
+            color: #f2f2f2;
+            backdrop-filter: blur(15px);
+            background: rgba(245, 243, 243, 0.016);
+            border-radius: 20px;
+        }
+
+        .box h1 {
+            text-align: center;
+            margin: 30px 0;
+            font-size: 30px;
+            color: #db8154;
+            text-transform: uppercase;
+        }
+
+        .box input {
+            display: block;
+            width: 300px;
+            margin: 20px auto;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.2);
+            color: #fff;
+            border: 0;
+        }
+
+
+
+        .box input:focus,
+        .box input:active,
+        .box button:focus,
+        .box button:active {
+            outline: none;
+        }
+
+        .box button {
+            background:
+                linear-gradient(to right,
+                #e19a76,#8a887f);
+            border: 0;
+            color: #fff;
+            padding: 10px;
+            font-size: 20px;
+            width: 330px;
+            margin: 20px auto;
+            display: block;
+            cursor: pointer;
+        }
+
+        .box button:active {
+            background: linear-gradient(to right,#e19a76, #424d54);
+        }
+
+        .box p {
+            font-size: 14px;
+            text-align: center;
+            color: #4f4e43;
+        }
+
+        .box p span {
+            cursor: pointer;
+            color:#db8154;
+            font-weight: 600;
+        }
+
+ 
+
+    </style>
+</head>
+
+<body>
+    <div class="img-container">
+        <img src="assets/img/backimg.jpeg" class="bgimg">
+   
+        <div class="inner-container">
+
+            <div class="box">
+                <h1>Login</h1>
+                <input type="text" placeholder="Username" />
+                <input type="text" placeholder="Password" />
+                <button>Login</button>
+                <p>Not a member? <span>Sign Up</span></p>
+            </div>
+        </div>
+    </div>
+
+     
+</body>
+
+</html>

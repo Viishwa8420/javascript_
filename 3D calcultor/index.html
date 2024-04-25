@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+</head>
+<body>
+    <section>
+        <h2>Calculating Device</h2>
+    </section>
+    
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+        body .calc{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height:85vh;
+        }
+        body section {
+            display: flex;
+            justify-content: center;
+            padding:10px;
+        }
+        body section h2 {
+            font-size:70px;
+            font-weight: 700;
+            color:rgb(19, 38, 72);
+        }
+
+        table{
+        background-color:rgb(19, 38, 72);
+        height: 580px;
+        }
+        table tr td input{
+            width:100%;
+            height:100%;
+            font-size:30px;
+            font-weight: 800;
+            background-color:#7d9aad;
+            color: aliceblue;
+        }
+    </style>
+    <section class="calc">
+    <table width="500px" style="border:25px outset #a3b9c7 ;">
+        <tr class="d-flex" >
+            <td width="75%" colspan="3">
+                <input type="text" name="display" id="display" style="background-color: #cedcb9; color: #4d738a; padding-left:10px;">
+            </td>
+            <td width="25%">
+                <input type="button" value="c" onclick="Displayclr()" style="background-color:#4d738a;">
+            </td>
+        </tr>
+        <tr>
+            <td width="25%">
+                <input type="button" value="1" onclick="addtoDisplay('1')">
+            </td>
+            <td width="25%">
+                <input type="button" value="2" onclick="addtoDisplay('2')">
+            </td>
+            <td width="25%">
+                <input type="button" value="3" onclick="addtoDisplay('3')">
+            </td>
+            <td width="25%">
+                <input type="button" value="/" onclick="addtoDisplay('/')">
+            </td>
+        </tr>
+        <tr>
+            <td width="25%">
+                <input type="button" value="4" onclick="addtoDisplay('4')">
+            </td>
+            <td width="25%">
+                <input type="button" value="5" onclick="addtoDisplay('5')">
+            </td>
+            <td width="25%">
+                <input type="button" value="6" onclick="addtoDisplay('6')">
+            </td>
+            <td width="25%">
+                <input type="button" value="*" onclick="addtoDisplay('*')">
+            </td>
+        </tr>
+        <tr>
+            <td width="25%">
+                <input type="button" value="7" onclick="addtoDisplay('7')">
+            </td>
+            <td width="25%">
+                <input type="button" value="8" onclick="addtoDisplay('8')">
+            </td>
+            <td width="25%">
+                <input type="button" value="9" onclick="addtoDisplay('9')">
+            </td>
+            <td width="25%">
+                <input type="button" value="-" onclick="addtoDisplay('-')">
+            </td>
+        </tr>
+        <tr>
+            <td width="25%">
+                <input type="button" value="0" onclick="addtoDisplay('0')">
+            </td>
+            <td width="25%">
+                <input type="button" value="00" onclick="addtoDisplay('00')">
+            </td>
+            <td width="25%">
+                <input type="button" value="+" onclick="addtoDisplay('+')">
+            </td>
+            <td width="25%">
+                <input type="button" value="=" onclick="calc()">
+            </td>
+        </tr>
+    </table>
+</section>
+    <script>
+        function addtoDisplay(value){
+            var display = document.getElementById("display");
+            display.value += value;
+        }
+        function Displayclr(){
+            var display = document.getElementById("display");
+            display.value = " ";
+        }
+        function calc(){
+            var display = document.getElementById("display");
+            display.value = eval(display.value);
+        }
+    </script>
+</body>
+</html>

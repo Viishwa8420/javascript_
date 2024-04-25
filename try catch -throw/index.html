@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>try-catch-throw</title>
+</head>
+<body>
+
+    <script>
+        // try & catch
+
+        try{
+            name = vish;
+            console.log(name);
+        }
+        catch(error){
+            console.log(error.name);
+            console.log(error.message);
+        }
+        let vishwa = 2041;
+        console.log(vishwa);
+        
+        // throw
+
+        try{
+           let age = prompt("Is your age 18 ? // 'Y' for Yes 'N' for No");
+                if(age == 'Y'){
+                    throw{
+                        name : "Viniie",
+                        message : 'You entered "Y"'
+                    }
+                }
+        }
+        catch(error){
+            console.log(error.name);
+            console.log(error.message);
+        }
+        let a=50;
+        console.log(a);
+    </script>
+    
+</body>
+</html>
