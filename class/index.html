@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oops class</title>
+</head>
+<body>
+<p id="car"></p>
+    <script>
+        class student{
+            constructor(name,rank){
+                this.name = name;
+                this.rank = rank;
+            }
+        }
+        const vishwa = new student("Vishwa",1);
+        const suhani = new student("Suhani",2);
+
+        document.getElementById("car").innerHTML = vishwa.name + "" + vishwa.rank;
+    </script>
+</body>
+</html>

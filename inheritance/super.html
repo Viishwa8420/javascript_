@@ -1,0 +1,18 @@
+<script type="text/Javascript">
+    class person{
+        constructor(name){
+            this.name = name;
+        }
+        personName(){
+            console.log(`Hello ${this.name}`);
+        }
+    }
+    class student extends person{
+        constructor(name){
+            console.log("Good Morning");
+            super(name);
+        }
+    }
+    let studentName = new student('Vishwa');
+    studentName.personName();
+</script>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiplication Table</title>
+</head>
+<body>
+
+  <h2>Generate Multiplication Table</h2>
+  
+  <label for="numberInput">Enter a number:</label>
+  <input type="number" id="numberInput">
+  <button onclick="generate()">Generate Table</button>
+  
+  <div id="tableOutput"></div>
+
+  <script>
+    class MultiplicationTableGenerator {
+      constructor(number) {
+        this.number = number;
+      }
+
+      generate() {
+        let i = 1;
+        let table = `<h3>Multiplication Table of ${this.number}:</h3>`;
+        do {
+          table += `${this.number} * ${i} = ${this.number * i}<br>`;
+          i++;
+        } while (i <= 10);
+        return table;
+      }
+    }
+
+    function generate() {
+      const numberInput = document.getElementById('numberInput').value;
+      const number = parseInt(numberInput);
+
+      const tableGenerator = new MultiplicationTableGenerator(number);
+      const tableOutput = document.getElementById('tableOutput');
+      tableOutput.innerHTML = tableGenerator.generate();
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percentage & grades according to your marks</title>
+</head>
+<body>
+    <script>
+        class Student {
+  constructor(Physics, Chemistry, Biology, Mathematics, Computer) {
+    this.Physics = Physics;
+    this.Chemistry = Chemistry;
+    this.Biology = Biology;
+    this.Mathematics = Mathematics;
+    this.Computer = Computer;
+  }
+
+  calculatePercentage() {
+    let totalMarks = this.Physics + this.Chemistry + this.Biology + this.Mathematics + this.Computer;
+    let percentage = (totalMarks / 500) * 100;
+    return percentage;
+  }
+
+  calculateGrade() {
+    let percentage = this.calculatePercentage();
+    let grade;
+
+    if (percentage >= 90) {
+      grade = 'A';
+    } else if (percentage >= 80) {
+      grade = 'B';
+    } else if (percentage >= 70) {
+      grade = 'C';
+    } else if (percentage >= 60) {
+      grade = 'D';
+    } else if (percentage >= 50) {
+      grade = 'E';
+    } else {
+      grade = 'F';
+    }
+
+    return grade;
+  }
+}
+
+let student1 = new Student(85, 90, 75, 95, 80);
+console.log("Percentage:", student1.calculatePercentage(), "%");
+console.log("Grade:", student1.calculateGrade());
+    </script>
+</body>
+</html>

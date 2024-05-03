@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>jQuery Validation</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <!-- Include FontAwesome CSS if you want to use feedback icons provided by FontAwesome -->
+    <!--link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css" /-->
+
+    <!-- jQuery and Bootstrap JS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <!-- BootstrapValidator CSS -->
+    <!-- BootstrapValidator JS -->
+    <link rel="stylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/css/bootstrapValidator.min.css" />
+    <script type="text/javascript"
+        src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
+
+    <script src="scripts.js"></script>
+
+</head>
+
+<body>
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Indie+Flower|Rubik");
+* {
+  margin: 0;
+  padding: 0;
+  
+}
+
+#validateform {
+  font-family: "Rubik", sans-serif;
+  font-size: 14px;
+  height:99vh;
+  width:99%;
+  background-image:url('assets/img/bgimg.jpg');
+  background-size:cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#registrationForm{
+    width:100%;
+    margin-top:230px;
+    line-height:60px;
+}
+form label{
+  font-size:30px;
+}
+.form-control{
+  padding:20px;
+}
+.row {
+  display: flex;
+  justify-content: end;
+    margin: 0 !important;
+}
+    </style>
+    <div id="validateform">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="page-header " style="text-align: center;">
+                    <h2 style=" font-size:46px; font-weight: bold; color: rgb(18, 49, 13);">Sign up</h2>
+                </div>
+
+                <form id="registrationForm" action="" method="post" class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">First Name</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" name="firstName" />
+                            <span class="help-block" id="firstNameMessage"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Last Name</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" name="lastName" />
+                            <span class="help-block lastNameMessage"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Email Address</label>
+                        <div class="col-sm-5">
+                            <input type="email" class="form-control" name="email" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Password</label>
+                        <div class="col-sm-5">
+                            <input type="password" class="form-control" name="password" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Retype Password</label>
+                        <div class="col-sm-5">
+                            <input type="password" class="form-control" name="confirmPassword" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-9 col-sm-offset-3">
+                            <!-- Do NOT use name="submit" or id="submit" for the Submit button -->
+                            <button type="submit" class="btn btn-default" id="signupBtn" style="padding:10px; width:140px; border-radius: 10px; font-size:20px; color:rgba(18, 49, 13, 0.897); background-color: rgb(175, 239, 175);">Sign up</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+  $("#registrationForm").bootstrapValidator({
+    // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
+    feedbackIcons: {
+      valid: "glyphicon glyphicon-ok",
+      invalid: "glyphicon glyphicon-remove",
+      validating: "glyphicon glyphicon-refresh"
+    },
+    fields: {
+      firstName: {
+        container: "#firstNameMessage",
+        validators: {
+          notEmpty: {
+            message: "The first name is required and cannot be empty"
+          }
+        }
+      },
+      lastName: {
+        container: ".lastNameMessage",
+        validators: {
+          notEmpty: {
+            message: "The last name is required and cannot be empty"
+          }
+        }
+      },
+
+      email: {
+        validators: {
+          notEmpty: {
+            message: "The email address is required and cannot be empty"
+          },
+          emailAddress: {
+            message: "The email address is not a valid"
+          }
+        }
+      },
+
+      password: {
+        validators: {
+          identical: {
+            field: "confirmPassword",
+            message: "The password and its confirm are not the same"
+          }
+        }
+      },
+      confirmPassword: {
+        validators: {
+          identical: {
+            field: "password",
+            message: "The password and its confirm are not the same"
+          }
+        }
+      }
+    }
+  });
+});
+
+    </script>
+</body>
+
+</html>

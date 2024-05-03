@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>submit & cancel form</title>
+</head>
+<body>
+    <script>
+        class student{
+            submit(){
+                alert(this.name +" " +"your form has been submitted.")
+            }
+            cancel(){
+                alert(this.name +" " +"your form has been cancelled.")
+            }
+            fill(given){
+                this.name = given
+            }
+        }
+
+        let Divu = new student()
+        Divu.fill("DIVU");
+        let Shivu = new student()
+        Shivu.fill("SHIVU");
+
+        Divu.submit()
+        Shivu.cancel()
+    </script>
+</body>
+</html>

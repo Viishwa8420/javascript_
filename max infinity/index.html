@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Max number</title>
+</head>
+<body>
+    <p id="max"></p>
+    <script>
+        function maxnum(){
+            let max = -Infinity;
+            for(i=0;i<arguments.length;i++){
+                if(arguments[i]>max){
+                    max = arguments[i];
+                }
+            }
+            return max;
+        }
+        document.getElementById("max").innerHTML = maxnum(13,54,22);
+    </script>
+</body>
+</html>

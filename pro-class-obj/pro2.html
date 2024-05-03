@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML DATA TABLE</title>
+</head>
+<body>
+   <script>
+    function Person(name, email, phone) {
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+    }
+    let data = [
+        new Person("jay", "jay@gmail.com", "12345"),
+        new Person("ajay", "ajay@gmail.com", "12345"),
+        new Person("vijay", "vijay@gmail.com", "12345"),
+        new Person("ashish", "ashish@gmail.com", "12345")
+    ];
+    function generateTable(data) {
+        let table = "<table border='5' cellpadding='18'><tr><th>Name</th><th>Email</th><th>Phone</th></tr>";
+        for (let i = 0; i < data.length; i++) {
+            table += "<tr>";
+            table += "<td>" + data[i].name + "</td>";
+            table += "<td>" + data[i].email + "</td>";
+            table += "<td>" + data[i].phone + "</td>";
+            table += "</tr>";
+        }
+        table += "</table>";
+        return table;
+    }
+    document.writeln(generateTable(data));
+   </script> 
+</body>
+</html>
