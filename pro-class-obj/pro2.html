@@ -7,19 +7,39 @@
 </head>
 <body>
    <script>
-    function Person(name, email, phone) {
-        this.name = name;
-        this.email = email;
-        this.phone = phone;
+    class Person {
+        constructor(name, email, phone){
+            this.name = name;
+            this.email = email;
+            this.phone = phone;
+        }
     }
+    
     let data = [
-        new Person("jay", "jay@gmail.com", "12345"),
-        new Person("ajay", "ajay@gmail.com", "12345"),
-        new Person("vijay", "vijay@gmail.com", "12345"),
-        new Person("ashish", "ashish@gmail.com", "12345")
+        {
+            name : "jay",
+            email : "jay@gmail.com",
+            phone : "12345",
+        },
+        {
+            name : "ajay",
+            email : "ajay@gmail.com",
+            phone : "12345",
+        },
+        {
+            name : "vijay",
+            email : "vijay@gmail.com",
+            phone : "12345",
+        },
+        {
+            name : "ashish",
+            email : "ashish@gmail.com",
+            phone : "12345",
+        },
     ];
+
     function generateTable(data) {
-        let table = "<table border='5' cellpadding='18'><tr><th>Name</th><th>Email</th><th>Phone</th></tr>";
+        let table = "<table border='7' cellpadding='18'><tr><th>Name</th><th>Email</th><th>Phone</th></tr>";
         for (let i = 0; i < data.length; i++) {
             table += "<tr>";
             table += "<td>" + data[i].name + "</td>";
@@ -27,10 +47,13 @@
             table += "<td>" + data[i].phone + "</td>";
             table += "</tr>";
         }
+    
         table += "</table>";
         return table;
     }
+
     document.writeln(generateTable(data));
+
    </script> 
 </body>
 </html>
