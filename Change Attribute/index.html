@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change value of Attribute</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        .img{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding:40px;
+        }
+        img{
+            width:100%;
+            height:85vh;
+            object-fit:contain;
+        }
+       .btn{
+        display: flex;
+        justify-content: center;
+    
+       }
+       button{
+       margin-top:20px;
+        width:400px;
+        height:5vh;
+        border:0;
+        border-radius:20px;
+        color: aliceblue;
+        background-color: rgb(129, 177, 179);
+        font-size:30px;
+        padding:10px;
+       }
+       button:hover{
+        background-color: cadetblue;
+       }
+    </style>
+</head>
+<body>
+   <div class="btn">
+    <button onclick="generate()" id="change">Explore with me</button>
+   </div>
+    <div class="img">
+    <img id="img1" src="https://images.pexels.com/photos/13041184/pexels-photo-13041184.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+    <img id="img2" src="https://images.pexels.com/photos/18184225/pexels-photo-18184225/free-photo-of-statue-of-liberty-on-a-staten-island.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+    <img id="img3" src="https://images.pexels.com/photos/777059/pexels-photo-777059.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+    <img id="img4" src="https://images.pexels.com/photos/6053202/pexels-photo-6053202.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+    <img id="img5" src="https://images.pexels.com/photos/19750360/pexels-photo-19750360/free-photo-of-a-sailboat-in-the-bay-on-the-background-of-skyscrapers-in-san-francisco-california-usa.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+    </div>
+
+    <script>
+        function generate() {
+            const images = ["img1", "img2", "img3"];
+            const index = Math.floor(Math.random() * images.length);
+            document.getElementById("img1").style.display = "none";
+            document.getElementById("img2").style.display = "none";
+            document.getElementById("img3").style.display = "none";
+            document.getElementById("img4").style.display = "none";
+            document.getElementById("img5").style.display = "none";
+            document.getElementById(images[index]).style.display = "block";
+        }
+
+        window.onload = function(){
+            generate();
+            document.getElementById("change").addEventListener("click", generate);
+        }
+    </script>
+</body>
+</html>

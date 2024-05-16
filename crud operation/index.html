@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>crud operation</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body onload="readAll()">
+    <section>
+        <div class="container">
+            <div class="row">
+                <button onclick="create()" class="add">Add Data</button>
+                <div class="form">
+                    <form>
+                        
+                        <div class="create-form">
+                            <input type="text" placeholder="Enter your name" class="name">
+                            <input type="email" placeholder="Enter your E-mail" class="email">
+                            <input type="button" onclick="add()" value="Create">
+                        </div>
+                        <div class="update-form">
+                            <input type="text" class="id" hidden>
+                            <input type="text" placeholder="Enter your name" class="uname">
+                            <input type="email" placeholder="Enter your E-mail" class="uemail">
+                            <input type="button" onclick="update()" value="Update">
+                        </div>
+                    </form>
+                   
+                    <table width="700">
+                        <thead>
+                            <th width="30%">
+                                Name
+                            </th>
+                            <th width="30%">
+                                Email
+                            </th>
+                            <th width="40%">
+                               Action 
+                            </th>
+                        </thead>
+                        <tbody class="data_table" align="center">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <script src="assets/js/crud.js">
+
+    </script>
+</body>
+
+</html>

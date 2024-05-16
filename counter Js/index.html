@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dessert Special</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body .w-12 {
+            display: flex;
+            justify-content: center;
+            justify-content: space-evenly;
+        }
+
+        img {
+            width: 100%;
+            height: 550px;
+            object-fit: cover;
+            overflow: hidden;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .welcome {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        h1 {
+            font-size: 80px;
+            margin: 30px 0;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .welcome p {
+            font-size: 30px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: #640000;
+            margin-bottom: 50px;
+        }
+
+        p {
+            font-size: 30px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: #640000;
+        }
+
+        .d-flex {
+            display: flex;
+            justify-content: center;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        button {
+            width: 80px;
+            height: 40px;
+            font-size: 20px;
+            border-radius: 10px;
+            border: none;
+            background-color: #640000;
+            color: aliceblue;
+        }
+
+        button:hover {
+            background-color: #7b0909b7;
+        }
+
+        .count {
+            font-size: 40px;
+        }
+
+        span {
+            font-size: 30px;
+        }
+
+        .offer {
+            background-color: rgb(249, 214, 171);
+            padding: 40px;
+        }
+        h3{
+            color: rgb(40, 42, 42);
+            font-size:40px;
+            margin-top:15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section>
+        <div class="row">
+            <div class="welcome">
+                <h1>Welcome to Dessert World</h1>
+                <p>Grab Your Special Dessert Now
+                </p>
+                <div class="offer">
+                    <span>Hurry Up..!! Offer Ends Soon..!!</span>
+                    <span id="demo" class="d-flex"></span>
+                </div>
+
+            </div>
+            <div class="w-12" style="margin: 100px 0;">
+                <div class="w-3" style="background-color: rgb(230, 219, 204); border-radius:20px;"><img
+                        src="assets/img/brownie.jpeg">
+                        <h3 class="d-flex">Brownies</h3>
+                    <div class="price d-flex" style="margin:20px 0;">
+                        <p id="main_price">price : $06.00</p>
+                        <span><del>$09.00</del></span>
+                    </div>
+                    <div class="counter d-flex" style="margin:15px 0;">
+                        <button id="decrement">-</button>
+                        <button id="increment">+</button>
+                        <div class="count" id="count">1</div>
+                        <button id="reset">Reset</button>
+                    </div>
+                </div>
+                <div class="w-3" style="background-color: rgb(230, 219, 204); border-radius:20px;"><img
+                        src="assets/img/macrons.webp">
+                        <h3 class="d-flex">Macrons</h3>
+                    <div class="price d-flex" style="margin:20px 0;">
+                        <p id="main_price1">price : $12.00</p>
+                        <span><del>$18.00</del></span>
+                    </div>
+                    <div class="counter d-flex" style="margin:15px 0;">
+                        <button id="decrement1">-</button>
+                        <button id="increment1">+</button>
+                        <div class="count" id="count1">1</div>
+                        <button id="reset1">Reset</button>
+                    </div>
+                </div>
+                <div class="w-3" style="background-color: rgb(230, 219, 204); border-radius:20px;"><img
+                        src="assets/img/cheese cake.jpeg">
+                        <h3 class="d-flex">Cheese Cake</h3>
+                    <div class="price d-flex" style="margin:20px 0;">
+                        <p id="main_price2">price : $18.00</p>
+                        <span><del>$22.00</del></span>
+                    </div>
+                    <div class="counter d-flex" style="margin:15px 0;">
+                        <button id="decrement2">-</button>
+                        <button id="increment2">+</button>
+                        <div class="count" id="count2">1</div>
+                        <button id="reset2">Reset</button>
+                    </div>
+                </div>
+                <div class="w-3" style="background-color: rgb(230, 219, 204); border-radius:20px;"><img
+                        src="assets/img/donut.jpeg">
+                        <h3 class="d-flex">Donut</h3>
+                    <div class="price d-flex" style="margin:20px 0;">
+                        <p id="main_price3">price : $08.00</p>
+                        <span><del>$14.00</del></span>
+                    </div>
+                    <div class="counter d-flex" style="margin:15px 0;">
+                        <button id="decrement3">-</button>
+                        <button id="increment3">+</button>
+                        <div class="count" id="count3">1</div>
+                        <button id="reset3">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+         let counter = 1; 
+        let price = 6; 
+        const increments = document.getElementById("increment");
+        const decrements = document.getElementById("decrement");
+        const count = document.getElementById("count");
+        const resets = document.getElementById("reset");
+        const main_price = document.getElementById('main_price');
+
+        increments.addEventListener('click', () => {
+            counter++;
+            price = counter * 6; 
+            count.innerHTML = counter;
+            main_price.innerHTML = "price : $" + price.toFixed(2); 
+        });
+
+        decrements.addEventListener('click', () => {
+            if (counter > 1) { 
+                counter--;
+                price = counter * 6; 
+                count.innerHTML = counter;
+                main_price.innerHTML = "price : $" + price.toFixed(2); 
+            }
+        });
+
+        resets.addEventListener('click', () => {
+            counter = 1; 
+            price = 6;
+            count.innerHTML = counter;
+            main_price.innerHTML = "price : $" + price.toFixed(2); 
+        });
+
+         let counter1 = 1; 
+        let price1 = 12; 
+        const increments1 = document.getElementById("increment1");
+        const decrements1 = document.getElementById("decrement1");
+        const count1 = document.getElementById("count1");
+        const resets1 = document.getElementById("reset1");
+        const main_price1 = document.getElementById('main_price1');
+
+        increments1.addEventListener('click', () => {
+            counter1++;
+            price1 = counter1 * 12; 
+            count1.innerHTML = counter1;
+            main_price1.innerHTML = "price : $" + price1.toFixed(2); 
+        });
+
+        decrements1.addEventListener('click', () => {
+            if (counter1 > 1) { 
+                counter1--;
+                price1 = counter1 * 12; 
+                count1.innerHTML = counter1;
+                main_price1.innerHTML = "price : $" + price1.toFixed(2); 
+            }
+        });
+
+        resets1.addEventListener('click', () => {
+            counter1 = 1; 
+            price1 = 12;
+            count1.innerHTML = counter1;
+            main_price1.innerHTML = "price : $" + price1.toFixed(2); 
+        });
+         let counter2 = 1; 
+        let price2 = 18; 
+        const increments2 = document.getElementById("increment2");
+        const decrements2 = document.getElementById("decrement2");
+        const count2 = document.getElementById("count2");
+        const resets2 = document.getElementById("reset2");
+        const main_price2 = document.getElementById('main_price2');
+
+        increments2.addEventListener('click', () => {
+            counter2++;
+            price2 = counter2 * 18; 
+            count2.innerHTML = counter2;
+            main_price2.innerHTML = "price : $" + price2.toFixed(2); 
+        });
+
+        decrements2.addEventListener('click', () => {
+            if (counter2 > 1) { 
+                counter2--;
+                price2 = counter2 * 18; 
+                count2.innerHTML = counter2;
+                main_price2.innerHTML = "price : $" + price2.toFixed(2); 
+            }
+        });
+
+        resets2.addEventListener('click', () => {
+            counter2 = 1; 
+            price2 = 18;
+            count2.innerHTML = counter2;
+            main_price2.innerHTML = "price : $" + price2.toFixed(2); 
+        });
+         let counter3 = 1; 
+        let price3 = 8; 
+        const increments3 = document.getElementById("increment3");
+        const decrements3 = document.getElementById("decrement3");
+        const count3 = document.getElementById("count3");
+        const resets3 = document.getElementById("reset3");
+        const main_price3 = document.getElementById('main_price3');
+
+        increments3.addEventListener('click', () => {
+            counter3++;
+            price3 = counter3 * 8; 
+            count3.innerHTML = counter3;
+            main_price3.innerHTML = "price : $" + price3.toFixed(2); 
+        });
+
+        decrements3.addEventListener('click', () => {
+            if (counter3 > 1) { 
+                counter3--;
+                price3 = counter3 * 8; 
+                count3.innerHTML = counter3;
+                main_price3.innerHTML = "price : $" + price3.toFixed(2); 
+            }
+        });
+
+        resets3.addEventListener('click', () => {
+            counter3 = 1; 
+            price3 = 8;
+            count3.innerHTML = counter3;
+            main_price3.innerHTML = "price : $" + price3.toFixed(2); 
+        });
+       
+
+        
+        let deadline = new Date("May 19,2024 00:45:10")
+            .getTime();
+
+        let x = setInterval(function () {
+            let now = new Date().getTime();
+            let t = deadline - now;
+
+            let days = Math.floor(t / (1000 * 60 * 60 * 24));
+
+            let hours = Math.floor(t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60);
+
+            let minutes = Math.floor(t % (1000 * 60 * 60)) / (1000 * 60);
+
+            let seconds = Math.floor(t % (1000 * 60)) / (1000);
+
+            document.getElementById("demo").innerHTML = days.toFixed(2) + "  " + "d" + "      " + hours.toFixed(3) + "  " + "h" + "      " + minutes.toFixed(3) + "  " + "m" + "      " + seconds.toFixed(3) + "  " + "s";
+
+            if (t < 0) {
+                clearInterval(x);
+                document.getElementById("demo").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    </script>
+
+</body>
+
+</html>
