@@ -1,346 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cart</title>
+    <title>Cart</title>
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/css/all.min.css" rel="stylesheet">
-  <link href="assets/css/font.css" rel="stylesheet">
-  <link rel="icon" href="assets/img/icon.webp" sizes="32x32">
+    <link href="assets/css/all.min.css" rel="stylesheet">
+    <link href="assets/css/font.css" rel="stylesheet">
+    <link rel="icon" href="assets/img/icon.webp" sizes="32x32">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
+    <!-- header start -->
+    <nav class="navbar navbar-expand-lg bg-main">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold text-color fs-28 ms-4" href="#"><img src="assets/img/dark-logo.png"
+                    width="140px" height="40px"></a>
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon text-color"></span>
+            </button>
+            <div class="collapse navbar-collapse d-flex justify-content-evenly fw-bold ms-5" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-lg-0 text-color text-capitalize fs-18">
+                  <li><a href="index.html" class="mx-4 text-dark">Home</a></li>
+                  <li><a href="#" class="mx-4 text-dark">About</a></li>
+                  <li><a href="#" class="mx-4 text-dark">Contact</a></li>
+                  <li><a href="#" class="mx-4 text-dark">Blog</a></li>
+                  <li><a href="#" class="ms-4 text-dark">Product</a></li>
+                </ul>
+                <ul class="d-flex mt-3">
+                    <li class="ms-5"><a href="index.html" class="text-color fs-28"><i class="fa-solid fa-house"></i></a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- header end -->
 
+    <h1 class="fw-bold text-center fs-24 p-3">Shopping Cart</h1>
 
-   <!-- header start -->
-   <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-      <a class="navbar-brand fw-bold text-color fs-28 ms-4" href="#"><img src="assets/img/dark-logo.png" width="140px"
-          height="40px"></a>
-      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-        aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon text-color"></span>
-      </button>
-      <div class="collapse navbar-collapse d-flex justify-content-evenly" id="navbarSupportedContent">
-        <ul class="navbar-nav mb-lg-0 text-color text-capitalize fs-18">
+    <table class="shopping-cart table table-bordered">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Remove</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody id="cart"></tbody>
+        <tfoot>
+            <tr class="totals">
+                <td colspan="4"></td>
+                <td>Subtotal</td>
+                <td id="cart-Subtotal">0.00</td>
+            </tr>
+            <tr class="totals">
+                <td colspan="4"></td>
+                <td>Tax (5%)</td>
+                <td id="cart-Tax">0.00</td>
+            </tr>
+            <tr class="totals">
+                <td colspan="4"></td>
+                <td>Shipping</td>
+                <td id="cart-Shipping">15.00</td>
+            </tr>
+            <tr class="totals totals-item-total">
+                <td colspan="4"></td>
+                <td>Grand Total</td>
+                <td id="cart-Total">0.00</td>
+            </tr>
+        </tfoot>
+    </table>
+    <button class="checkout btn "><a href="index.html" class="text-dark fw-bold">Checkout</a></button>
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-color me-3" href="#" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Home
-            </a>
-            <ul class="dropdown-menu ">
-              <li><a class="dropdown-item text-color" href="#">Home 1 </a></li>
-              <li><a class="dropdown-item text-color" href="#">Home 2</a></li>
+   <!-- footer start -->
+  <section class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 d-flex justify-center align-center justify-between p-5">
+          <div class="col-3   company">
+            <ul>
+              <h2>Company</h2>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Delivery Information</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Support Center</a></li>
+              <li><a href="#">Careers</a></li>
             </ul>
-          </li>
-
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-color me-3" href="#" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              about us
-            </a>
-            <ul class="dropdown-menu ">
-              <li><a class="dropdown-item text-color" href="#">about us</a></li>
-              <li><a class="dropdown-item text-color" href="#">about us dark</a></li>
-
+          </div>
+          <div class="col-3   Info">
+            <ul>
+              <h2>Account</h2>
+              <li><a href="#">Sign In</a></li>
+              <li><a href="#">View Cart</a></li>
+              <li><a href="#">My Wishlist</a></li>
+              <li><a href="#">Track My Order</a></li>
+              <li><a href="#">Help Ticket</a></li>
+              <li><a href="#">Shipping Details</a></li>
+              <li><a href="#">Compare products</a></li>
             </ul>
-          </li>
-
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-color me-3" href="#" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              our team
-            </a>
-            <ul class="dropdown-menu ">
-              <li><a class="dropdown-item text-color" href="#">our team</a></li>
-              <li><a class="dropdown-item text-color" href="#">our team dark </a></li>
+          </div>
+          <div class="col-3   contact">
+            <ul>
+              <h2>Corporate</h2>
+              <li><a href="#">Become a Vendor</a></li>
+              <li><a href="#">Affiliate Program</a></li>
+              <li><a href="#">Farm Business</a></li>
+              <li><a href="#">Farm Careers</a></li>
+              <li><a href="#">Our Suppliers</a></li>
+              <li><a href="#">Accessibility</a></li>
+              <li><a href="#">Promotions</a></li>
             </ul>
+          </div>
+          <div class="col-3  Install-App">
+            <ul>
+              <li class="fs-18 t2 fw-bold">
+                GIFT CARDS</li>
 
-          </li>
-
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-color me-3" href="#" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              contact us
-            </a>
-            <ul class="dropdown-menu ">
-              <li><a class="dropdown-item text-color" href="#">contact us</a></li>
-              <li><a class="dropdown-item text-color" href="#">contact us dark</a></li>
-
-
+              <li class="text-color fs-28 fw-bold">Give a Gift Today</li>
+              <li class="fs-18 t2 fw-bold">
+                SOCIAL MEDIA
+              </li>
+              <li class="text-color fs-28 fw-bold">
+                Follow Ceremony
+              </li>
+              <li class="pay d-flex mt-3 fs-28">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              </li>
             </ul>
-          </li>
+          </div>
+        </div>
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-color me-3" href="#" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              online shop
-            </a>
-            <ul class="dropdown-menu ">
-              <li><a class="dropdown-item text-color" href="#">shop</a></li>
-              <li><a class="dropdown-item text-color" href="#">my account </a></li>
-
-              <li><a class="dropdown-item text-color" href="#"> cart</a></li>
-              <li><a class="dropdown-item text-color" href="#"> check out</a></li>
-            </ul>
-          </li>
-
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-color me-3" href="#" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              blog
-            </a>
-            <ul class="dropdown-menu ">
-              <li><a class="dropdown-item text-color" href="#">blog 1 column</a></li>
-              <li><a class="dropdown-item text-color" href="#">blog 2 columns</a></li>
-              <li><a class="dropdown-item text-color" href="#">blog 3 columns</a></li>
-
-
-            </ul>
-          </li>
-
-        </ul>
-        <ul class="d-flex mt-3">
-          <li class=" me-3"><a href="#" class="text-color"><i class="fa-regular fa-user"></i></a></li>
-          <li class=" me-3"><a href="#" class="text-color"><i class="fa-regular fa-star"></i></a></li>
-          <li class=" me-3"><a href="cart.html" class="text-color"><i class="fa-solid fa-cart-shopping"></i></a></li>
-          <li class=" me-3"><a href="#" class="text-color"><i class="fa-solid fa-magnifying-glass"></i></a></li>
-        </ul>
       </div>
     </div>
-  </nav>
-  <!-- header end -->
-  <h1 class="d-flex justify-content-center fw-bold bg-main p-5">Shopping Cart</h1>
+  </section>
+  <!-- footer end -->
 
-  <table class="shopping-cart">
-    <thead>
-      <tr>
-        <th>Image</th>
-        <th>Product</th>
-        <th>Price</th>
-        <th>Quantity</th>
-        <th>Remove</th>
-        <th>Total</th>
-      </tr>
-    </thead>
-    <tbody id="cart">
-    
-    </tbody>
-    <tfoot>
-      <tr class="totals">
-        <td colspan="4"></td>
-        <td>Subtotal</td>
-        <td id="cart-Subtotal">0.00</td>
-      </tr>
-      <tr class="totals">
-        <td colspan="4"></td>
-        <td>Tax (5%)</td>
-        <td id="cart-Tax">0.00</td>
-      </tr>
-      <tr class="totals">
-        <td colspan="4"></td>
-        <td>Shipping</td>
-        <td id="cart-Shipping">15.00</td>
-      </tr>
-      <tr class="totals totals-item-total">
-        <td colspan="4"></td>
-        <td>Grand Total</td>
-        <td id="cart-Total">0.00</td>
-      </tr>
-    </tfoot>
-  </table>
-  <button class="checkout"><a href="index.html" class="text-dark fw-bold">Checkout</a></button>
-  
- <!-- footer start -->
- <section class="footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 d-flex justify-center align-center justify-between p-5">
-        <div class="col-3   company">
-          <ul>
-            <h2>Company</h2>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Delivery Information</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms & Conditions</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#">Support Center</a></li>
-            <li><a href="#">Careers</a></li>
-          </ul>
-        </div>
-        <div class="col-3   Info">
-          <ul>
-            <h2>Account</h2>
-            <li><a href="#">Sign In</a></li>
-            <li><a href="#">View Cart</a></li>
-            <li><a href="#">My Wishlist</a></li>
-            <li><a href="#">Track My Order</a></li>
-            <li><a href="#">Help Ticket</a></li>
-            <li><a href="#">Shipping Details</a></li>
-            <li><a href="#">Compare products</a></li>
-          </ul>
-        </div>
-        <div class="col-3   contact">
-          <ul>
-            <h2>Corporate</h2>
-            <li><a href="#">Become a Vendor</a></li>
-            <li><a href="#">Affiliate Program</a></li>
-            <li><a href="#">Farm Business</a></li>
-            <li><a href="#">Farm Careers</a></li>
-            <li><a href="#">Our Suppliers</a></li>
-            <li><a href="#">Accessibility</a></li>
-            <li><a href="#">Promotions</a></li>
-          </ul>
-        </div>
-        <div class="col-3  Install-App">
-          <ul>
-            <li class="fs-18 t2 fw-bold">
-              GIFT CARDS</li>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+ <script>
+  const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
 
-            <li class="text-color fs-28 fw-bold">Give a Gift Today</li>
-            <li class="fs-18 t2 fw-bold">
-              SOCIAL MEDIA
-            </li>
-            <li class="text-color fs-28 fw-bold">
-              Follow Ceremony
-            </li>
-            <li class="pay d-flex mt-3 fs-28">
-              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-              <a href="#"><i class="fa-brands fa-twitter"></i></a>
-              <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            </li>
-          </ul>
-        </div>
-      </div>
+const renderCart = () => {
+    let cartHtml = '';
+    let subtotal = 0;
 
-    </div>
-  </div>
-</section>
-<!-- footer end -->
+    cartItems.forEach((item, index) => {
+        const itemTotal = parseFloat(item.price.replace('$', '')) * item.quantity;
+        subtotal += itemTotal;
 
-
-<script src="assets/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-
-
-<script>
-var taxRate = 0.05;
-var shippingRate = 15.00; 
-var fadeTime = 300;
-
-const getCart = () => {
-    let data = JSON.parse(localStorage.getItem('cart')) || [];
-    let tbl = "";
-
-    data.map((c, index) => {
-        tbl +=
-            `
-              <tr id="product${index}" class="product">
-                <td><img src="${c.image}" alt="${c.name}" height="150px"></td>
-                <td>${c.name}</td>
-                <td class="product-price">${c.price}</td>
+        cartHtml += `
+            <tr>
+                <td><img src="${item.image}" alt="${item.name}" width="50"></td>
+                <td>${item.name}</td>
+                <td>${item.price}</td>
                 <td>
-                    <div class="counter d-flex">
-                        <button class="decrement p-1 mx-3" data-index="${index}" style="border:0;">-</button>
-                        <div class="count mt-1" id="count${index}">1</div>
-                        <button class="increment p-1 mx-3" data-index="${index}" style="border:0;" >+</button>
-                        <button class="reset" data-index="${index}" style="border:0;" ><a href="#" class="text-color"><i class="fa-solid fa-arrow-rotate-right"></i></a></button>
-                    </div>
+                    <button class="btn btn-sm fs-22 bg-dark text-light" style="border-radius:15%; width:30px; height:30px;" onclick="decreaseQuantity(${index})">-</button>
+                    <span class="quantity mx-2">${item.quantity}</span>
+                    <button class="btn btn-sm fs-22 bg-dark text-light " style="border-radius:15%; width:30px; height:30px;" onclick="increaseQuantity(${index})">+</button>
                 </td>
-                <td><button class="remove p-1" data-index="${index}" style="border:0;"><a href="#" class="red"><i class="fa-solid fa-trash"></i></a></button></td>
-                <td class="product-line-price" id="subtotal${index}">${c.price}</td>
-              </tr> 
-            `;
+                <td><button class="btn bg-dark text-light remove" data-index="${index}"><i class="fa-solid fa-trash"></i></button></td>
+                <td>$${itemTotal.toFixed(2)}</td>
+            </tr>
+        `;
     });
 
-    document.getElementById("cart").innerHTML = tbl;
+    const tax = subtotal * 0.05;
+    const shipping = 15.00;
+    const grandTotal = subtotal + tax + shipping;
 
-    // Attach event listeners to the dynamically created buttons
-    data.forEach((c, index) => {
-        let counter = 1;
-        let price = parseFloat(c.price);
+    document.getElementById('cart').innerHTML = cartHtml;
+    document.getElementById('cart-Subtotal').textContent = `$${subtotal.toFixed(2)}`;
+    document.getElementById('cart-Tax').textContent = `$${tax.toFixed(2)}`;
+    document.getElementById('cart-Shipping').textContent = `$${shipping.toFixed(2)}`;
+    document.getElementById('cart-Total').textContent = `$${grandTotal.toFixed(2)}`;
+};
 
-        const increments = document.querySelector(`.increment[data-index="${index}"]`);
-        const decrements = document.querySelector(`.decrement[data-index="${index}"]`);
-        const count = document.getElementById(`count${index}`);
-        const resets = document.querySelector(`.reset[data-index="${index}"]`);
-        const subtotal = document.getElementById(`Subtotal${index}`);
-        const removeButton = document.querySelector(`.remove[data-index="${index}"]`);
+const increaseQuantity = (index) => {
+    cartItems[index].quantity += 1;
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+    renderCart();
+};
 
-        increments.addEventListener('click', () => {
-            counter++;
-            count.innerHTML = counter;
-            Subtotal.innerHTML = (price * counter).toFixed(2);
-            recalculateCart();
-        });
-
-        decrements.addEventListener('click', () => {
-            if (counter > 1) {
-                counter--;
-                count.innerHTML = counter;
-                Subtotal.innerHTML = (price * counter).toFixed(2);
-                recalculateCart();
-            }
-        });
-
-        resets.addEventListener('click', () => {
-            counter = 1;
-            count.innerHTML = counter;
-            Subtotal.innerHTML = price.toFixed(2);
-            recalculateCart();
-        });
-
-        removeButton.addEventListener('click', () => {
-            removeItem(index);
-        });
-    });
-
-    recalculateCart();
-}
-
-/* Recalculate cart */
-function recalculateCart() {
-    let Subtotal = 0;
-    
-    /* Sum up row totals */
-    document.querySelectorAll('.product-line-price').forEach(function (linePrice) {
-        Subtotal += parseFloat(linePrice.textContent);
-    });
-    
-    /* Calculate totals */
-    let Tax = Subtotal * taxRate;
-    let Shipping = (Subtotal > 0 ? ShippingRate : 0);
-    let Total = Subtotal + Tax + Shipping;
-    
-    /* Update totals display */
-    document.getElementById('cart-subtotal').innerHTML = Subtotal.toFixed(2);
-    document.getElementById('cart-tax').innerHTML = Tax.toFixed(2);
-    document.getElementById('cart-shipping').innerHTML = Shipping.toFixed(2);
-    document.getElementById('cart-total').innerHTML = Total.toFixed(2);
-    
-    if (Total == 0) {
-        document.querySelector('.checkout').style.display = 'none';
-    } else {
-        document.querySelector('.checkout').style.display = 'block';
+const decreaseQuantity = (index) => {
+    if (cartItems[index].quantity > 1) {
+        cartItems[index].quantity -= 1;
+        localStorage.setItem('cart', JSON.stringify(cartItems));
+        renderCart();
     }
-}
+};
 
-/* Remove item from cart */
-function removeItem(index) {
-    let data = JSON.parse(localStorage.getItem('cart')) || [];
-    data.splice(index, 1);
-    localStorage.setItem('cart', JSON.stringify(data));
-    document.getElementById(`product${index}`).remove();
-    recalculateCart();
-}
+const removeItem = (index) => {
+    cartItems.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+    renderCart();
+};
 
-getCart();
-</script>
+document.getElementById('cart').addEventListener('click', (event) => {
+    if (event.target.classList.contains('remove')) {
+        const index = event.target.getAttribute('data-index');
+        removeItem(index);
+    }
+});
 
+renderCart();
 
+ </script>
 </body>
+
 </html>
