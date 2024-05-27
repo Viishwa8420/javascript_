@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        
+        img {
+            width: 800px;
+            height: 500px;
+            object-fit: contain;
+            margin-top: 20px;
+        }
+        
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        
+        #country, #region, #updateDate, #cases, #vaccination {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        #read {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition:all 0.3s ease;
+        }
+        
+        #read:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <img id="image_url" src="">
+    <p id="city"></p>
+    <p id="temperature"></p>
+    <p id="humidity"></p>
+    <p id="weather_description"></p>
+    <button id="read">More Cities</button>
+
+    <script>
+        const generate = function () {
+            const Weather =
+            [
+    {
+        "city": "New York",
+        "temperature": "67°F",
+        "humidity": "98%",
+        "weather_description": "Partly Cloudy",
+        "image_url": "https://www.tomorrow.io/wp-content/uploads/2017/12/CC-Outernets-e1552074260892.jpeg"
+    },
+    {
+        "city": "Chicago",
+        "temperature": "83°F",
+        "humidity": "50%",
+        "weather_description": "Sunny",
+        "image_url": "https://assets1.cbsnewsstatic.com/i/cbslocal/wp-content/uploads/sites/15116062/2021/05/SkyCast-Today-4.png"
+    },
+    {
+        "city": "Philadelphia",
+        "temperature": "89°F",
+        "humidity": "25%",
+        "weather_description": "Mostly Sunny",
+        "image_url": "https://pbs.twimg.com/media/GMmn28ZWkAAXafR.jpg:large"
+    },
+    {
+        "city": "Houston",
+        "temperature": "33°F",
+        "humidity": "89%",
+        "weather_description": "Mostly Sunny",
+        "image_url": "https://pbs.twimg.com/media/GBEhQ4hXMAAZgn8.jpg"
+    }
+]
+
+
+            let index = Math.floor(Math.random() * Weather.length);
+            document.getElementById("city").innerHTML = Weather[index].city;
+            document.getElementById("temperature").innerHTML = Weather[index].temperature;
+            document.getElementById("humidity").innerHTML = Weather[index].humidity;
+            document.getElementById("weather_description").innerHTML = Weather[index].weather_description;
+            document.getElementById("image_url").src = Weather[index].image_url;
+        }
+
+        window.onload = function () {
+            generate();
+            document.getElementById("read").addEventListener('click', generate);
+        }
+
+    </script>
+</body>
+
+</html>

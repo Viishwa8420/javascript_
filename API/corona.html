@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corona API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        
+        img {
+            width: 800px;
+            height: 500px;
+            object-fit: contain;
+            margin-top: 20px;
+        }
+        
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        
+        #country, #region, #updateDate, #cases, #vaccination {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        #read {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        
+        #read:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <img id="imageUrl" src="" >
+    <p id="country"></p>
+    <p id="region"></p>
+    <p id="updateDate"></p>
+    <p id="cases"></p>
+    <p id="vaccination"></p>
+   
+    <button id="read">More Details</button>
+
+    <script>
+        const generate = function() {
+            const Corona = [
+                {
+                    "country": "Italy",
+                    "region": "Lombardy",
+                    "updateDate": "2019-20",
+                    "cases": {
+                        "total": 1500000,
+                        "active": 50000,
+                        "recovered": 1400000,
+                        "deaths": 50000
+                    },
+                    "vaccination": {
+                        "totalDoses": 5000000,
+                        "peopleVaccinated": 2500000,
+                        "peopleFullyVaccinated": 2400000
+                    },
+                    "imageUrl": "https://static01.nyt.com/images/2020/11/19/business/19italy-privatehospitals-1/19italy-privatehospitals-1-videoSixteenByNine3000.jpg?year=2020&h=1688&w=3000&s=193e33d70f4f5ddd3ff189c91a67c90db871bd3dca9521eb7df21b4b89c4b609&k=ZQJBKqZ0VN&tw=1"
+                },
+                {
+                    "country": "Italy",
+                    "region": "Sicily",
+                    "updateDate": "2019-20",
+                    "cases": {
+                        "total": 800000,
+                        "active": 30000,
+                        "recovered": 750000,
+                        "deaths": 20000
+                    },
+                    "vaccination": {
+                        "totalDoses": 3000000,
+                        "peopleVaccinated": 1500000,
+                        "peopleFullyVaccinated": 1450000
+                    },
+                    "imageUrl": "https://ichef.bbci.co.uk/news/976/cpsprodpb/211F/production/_112397480_mediaitem112397478.jpg"
+                },
+                {
+                    "country": "Italy",
+                    "region": "Tuscany",
+                    "updateDate": "2019-20",
+                    "cases": {
+                        "total": 600000,
+                        "active": 20000,
+                        "recovered": 570000,
+                        "deaths": 10000
+                    },
+                    "vaccination": {
+                        "totalDoses": 2500000,
+                        "peopleVaccinated": 1250000,
+                        "peopleFullyVaccinated": 1220000
+                    },
+                    "imageUrl": "https://images.livemint.com/img/2020/11/13/600x338/0b51ba1d6ee44186bad3f31067b7c216-0b51ba1d6ee44186bad3f31067b7c216-0_1605288769911_1605288800927.jpg"
+                },
+                {
+                    "country": "Italy",
+                    "region": "Veneto",
+                    "updateDate": "2019-20",
+                    "cases": {
+                        "total": 900000,
+                        "active": 35000,
+                        "recovered": 850000,
+                        "deaths": 15000
+                    },
+                    "vaccination": {
+                        "totalDoses": 3500000,
+                        "peopleVaccinated": 1750000,
+                        "peopleFullyVaccinated": 1700000
+                    },
+                    "imageUrl": "https://c.ndtvimg.com/2020-02/370h55l8_france-coronavirus_625x300_03_February_20.jpg"
+                }
+            ];
+
+            let index = Math.floor(Math.random() * Corona.length);
+            document.getElementById("country").innerHTML = Corona[index].country;
+            document.getElementById("region").innerHTML = Corona[index].region.replace(/\|/g, ', ');
+            document.getElementById("updateDate").innerHTML = Corona[index].updateDate;
+            document.getElementById("cases").innerHTML = `Total: ${Corona[index].cases.total}, Active: ${Corona[index].cases.active}, Recovered: ${Corona[index].cases.recovered}, Deaths: ${Corona[index].cases.deaths}`;
+            document.getElementById("vaccination").innerHTML = `Total Doses: ${Corona[index].vaccination.totalDoses}, People Vaccinated: ${Corona[index].vaccination.peopleVaccinated}, People Fully Vaccinated: ${Corona[index].vaccination.peopleFullyVaccinated}`;
+            document.getElementById("imageUrl").src = Corona[index].imageUrl;
+        }
+
+        window.onload = function() {
+            generate();
+            document.getElementById("read").addEventListener('click', generate);
+        }
+        
+    </script>
+</body>
+</html>

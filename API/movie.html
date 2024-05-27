@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        
+        img {
+            width: 800px;
+            height: 500px;
+            object-fit: contain;
+            margin-top: 20px;
+        }
+        
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        
+        #country, #region, #updateDate, #cases, #vaccination {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        #read {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        
+        #read:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <img id="image_url" src="">
+    <p id="title"></p>
+    <p id="director"></p>
+    <p id="year"></p>
+    <p id="genre"></p>
+    <p id="actors"></p>
+    <p id="plot"></p>
+   
+    <button id="read">More Movies</button>
+
+    <script>
+        const generate = function () {
+            const Movies =
+            [
+    {
+        "title": "Oppenheimer",
+        "director": "Christopher Nolan",
+        "year": 2023,
+        "genre": "Biographical, Drama",
+        "actors": "Cillian Murphy, Emily Blunt, Matt Damon, Robert Downey Jr.",
+        "plot": "The story of J. Robert Oppenheimer’s role in the development of the atomic bomb during World War II.",
+        "image_url": "https://m.media-amazon.com/images/I/61ln1IWAiwL._AC_UF1000,1000_QL80_.jpg"
+    },
+    {
+        "title": "Barbie",
+        "director": "Greta Gerwig",
+        "year": 2023,
+        "genre": "Comedy, Fantasy",
+        "actors": "Margot Robbie, Ryan Gosling, America Ferrera, Kate McKinnon",
+        "plot": "Barbie suffers a crisis that leads her to question her world and her existence.",
+        "image_url": "https://www.hollywoodreporter.com/wp-content/uploads/2023/06/French-Film-Poster-Barbie-Warner-Bros..jpg?w=1047"
+    },
+    {
+        "title": "Dune: Part Two",
+        "director": "Denis Villeneuve",
+        "year": 2023,
+        "genre": "Science Fiction, Adventure",
+        "actors": "Timothée Chalamet, Zendaya, Rebecca Ferguson, Javier Bardem",
+        "plot": "Paul Atreides unites with Chani and the Fremen while seeking revenge against the conspirators who destroyed his family.",
+        "image_url": "https://image.tmdb.org/t/p/original/gho58bYmw9juYXmUSHRJKOngJGn.jpg"
+    },
+    {
+        "title": "Killers of the Flower Moon",
+        "director": "Martin Scorsese",
+        "year": 2023,
+        "genre": "Crime, Drama",
+        "actors": "Leonardo DiCaprio, Robert De Niro, Lily Gladstone, Jesse Plemons",
+        "plot": "Members of the Osage tribe in the United States are murdered under mysterious circumstances in the 1920s, sparking a major FBI investigation involving J. Edgar Hoover.",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZDq8wlGBZ2apXp9fwUt34IldkXYesvrsIYM3-CgW_UA&s"
+    }
+]
+
+
+            let index = Math.floor(Math.random() * Movies.length);
+            document.getElementById("title").innerHTML = Movies[index].title;
+            document.getElementById("director").innerHTML = Movies[index].director;
+            document.getElementById("year").innerHTML = Movies[index].year;
+            document.getElementById("genre").innerHTML = Movies[index].genre;
+            document.getElementById("actors").innerHTML = Movies[index].actors;
+            document.getElementById("plot").innerHTML = Movies[index].plot;
+            document.getElementById("image_url").src = Movies[index].image_url;
+        }
+
+        window.onload = function () {
+            generate();
+            document.getElementById("read").addEventListener('click', generate);
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOVIE-API</title>
+</head>
+<body>
+    <img id="image" alt="" src="" width="500px" height="500px">
+    <button id="movie" onclick="movie()">Random Image</button>
+
+    <script>
+        function movie(){
+            var url="https://api.tomorrow.io/v4/weather/forecast?location=42.3478,-71.0466&apikey=hDBONnYmn3At0O3wypW3U2LpaQHZsBQg";
+            fetch(url)
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(data){
+                display_image(data.message);
+            })
+            .catch(function(error){
+                console.log("Error :" + error);
+            })
+        }
+        function display_image(img_url){
+            document.getElementById("image").src = img_url;
+        }
+    </script>
+</body>
+</html>

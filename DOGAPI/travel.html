@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAVEL-API</title>
+</head>
+<body>
+    <img id="image" alt="" src="" width="500px" height="500px">
+    <button id="travel" onclick="travel()">Random Image</button>
+
+    <script>
+        function travel(){
+            var url="https://dog.ceo/api/breeds/image/random";
+            fetch(url)
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(data){
+                display_image(data.message);
+            })
+            .catch(function(error){
+                console.log("Error :" + error);
+            })
+        }
+        function display_image(img_url){
+            document.getElementById("image").src = img_url;
+        }
+    </script>
+</body>
+</html>
