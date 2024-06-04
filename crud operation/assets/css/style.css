@@ -25,7 +25,7 @@ body{
     color: white;
 }
 button{
-  
+  outline: none;
     padding:08px;
     border:0;
     border-radius:50px;
@@ -65,6 +65,7 @@ input{
     width:200px;
     border:none;
     border-radius:50px;
+    outline: none;
 }
 input:last-child {
     width:80px;

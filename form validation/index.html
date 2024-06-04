@@ -27,7 +27,7 @@
 
       .inner-container {
         width: 400px;
-        height: 800px;
+        height: 750px;
         position: absolute;
         top: calc(25vh - 200px);
         left: calc(43.5vw - 200px);
@@ -79,20 +79,23 @@
       }
 
       .box button {
-        background: linear-gradient(to right, #e19a76, #8a887f);
+        background: linear-gradient(to right, #eeb091, #f4b99f);
         border-radius:20px;
         border:0;
         color: #fff;
-        padding: 10px;
+        padding: 6px;
         font-size: 25px;
-        width: 330px;
-        margin:50px 20px 0;
+        width: 200px;
+        margin:30px 80px;
         display: block;
         cursor: pointer;
+        transition:3s all !important;
       }
-
+      .box button:hover {
+        background: linear-gradient(to right, #f19466fe, #f4b99f);
+      }
       .box button:active {
-        background: linear-gradient(to right, #e19a76, #424d54);
+        background: linear-gradient(to right, #e19a76, #f4b99f);
       }
     </style>
   </head>

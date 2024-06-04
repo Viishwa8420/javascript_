@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <title>Task Manager</title>
+</head>
+<body onload="readAll()">
+    <section>
+        <div class="container">
+            <div class="row">
+                <button onclick="showCreateForm()" class="add"><i class="fa-solid fa-plus"></i></button>
+                <div class="form">
+                    <form>
+                        <div class="create-form" style="display: none;">
+                            <input type="text" placeholder="Enter your task" class="task">
+                            <input type="button" onclick="addTask()" value="Create">
+                        </div>
+                        <div class="update-form" style="display: none;">
+                            <input type="text" class="id" hidden>
+                            <input type="text" placeholder="Enter your task" class="utask">
+                            <input type="button" onclick="updateTask()" value="Update">
+                        </div>
+                    </form>
+                   
+                    <table>
+                        <thead>
+                            <tr>
+                                <th width="10%">Complete</th>
+                                <th width="60%">Task</th>
+                                <th width="30%">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="data_table">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="assets/js/todo.js"></script>
+</body>
+</html>

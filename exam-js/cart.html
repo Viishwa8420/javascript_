@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/all.min.css" rel="stylesheet">
+    <link href="assets/css/font.css" rel="stylesheet">
+    <link rel="icon" href="assets/img/toys.png" sizes="32x32">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-main">
+        <div class="container-fluid d-flex justify-content-center h-100 ">
+            <a class="navbar-brand fw-bold  toy-color fs-28 ms-4" href="#"><img src="assets/img/toy-shop.png"
+                    width="100px" height="100px"></a>
+        </div>
+    </nav>
+    <table class="shopping-cart table table-bordered">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Remove</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody id="cart"></tbody>
+        <tfoot>
+            <tr class="totals">
+               
+                <td>Subtotal</td>
+                <td colspan="4"></td>
+                <td id="cart-Subtotal">0.00</td>
+            </tr>
+            <tr class="totals">
+               
+                <td>Tax (5%)</td>
+                <td colspan="4"></td>
+                <td id="cart-Tax">0.00</td>
+            </tr>
+            <tr class="totals">
+               
+                <td>Shipping</td>
+                <td colspan="4"></td>
+                <td id="cart-Shipping">15.00</td>
+            </tr>
+            <tr class="totals totals-item-total">
+               
+                <td>Grand Total</td>
+                <td colspan="4"></td>
+                <td id="cart-Total">0.00</td>
+            </tr>
+        </tfoot>
+    </table>
+    <button class="checkout btn "><a href="index.html" class="text-light fw-bold">Home</a></button>
+
+
+
+
+
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script>
+
+        const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+        const renderCart = () => {
+            let cartHtml = '';
+            let subtotal = 0;
+
+            cartItems.forEach((item, index) => {
+                const itemTotal = parseFloat(item.price.replace('$', '')) * item.quantity;
+                subtotal += itemTotal;
+
+                cartHtml += `
+            <tr>
+                <td><img src="${item.image}" alt="${item.name}" width="50"></td>
+                <td>${item.name}</td>
+                <td>${item.price}</td>
+                <td>
+                    <button class="btn btn-sm fs-22 t2-color " style="border-radius:15%; width:30px; height:30px;" onclick="decreaseQuantity(${index})">-</button>
+                    <span class="quantity mx-2">${item.quantity}</span>
+                    <button class="btn btn-sm fs-22 t2-color " style="border-radius:15%; width:30px; height:30px;" onclick="increaseQuantity(${index})">+</button>
+                </td>
+                <td><button class="btn t2-color remove" data-index="${index}"><i class="fa-solid fa-trash"></i></button></td>
+                <td>$${itemTotal.toFixed(2)}</td>
+            </tr>
+        `;
+            });
+
+            const tax = subtotal * 0.05;
+            const shipping = 15.00;
+            const grandTotal = subtotal + tax + shipping;
+
+            document.getElementById('cart').innerHTML = cartHtml;
+            document.getElementById('cart-Subtotal').textContent = `$${subtotal.toFixed(2)}`;
+            document.getElementById('cart-Tax').textContent = `$${tax.toFixed(2)}`;
+            document.getElementById('cart-Shipping').textContent = `$${shipping.toFixed(2)}`;
+            document.getElementById('cart-Total').textContent = `$${grandTotal.toFixed(2)}`;
+        };
+
+        const increaseQuantity = (index) => {
+            cartItems[index].quantity += 1;
+            localStorage.setItem('cart', JSON.stringify(cartItems));
+            renderCart();
+        };
+
+        const decreaseQuantity = (index) => {
+            if (cartItems[index].quantity > 1) {
+                cartItems[index].quantity -= 1;
+                localStorage.setItem('cart', JSON.stringify(cartItems));
+                renderCart();
+            }
+        };
+
+        const removeItem = (index) => {
+            cartItems.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cartItems));
+            renderCart();
+        };
+
+        document.getElementById('cart').addEventListener('click', (event) => {
+            if (event.target.classList.contains('remove')) {
+                const index = event.target.getAttribute('data-index');
+                removeItem(index);
+            }
+        });
+
+        renderCart();
+
+    </script>
+</body>
+
+</html>

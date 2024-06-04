@@ -1,58 +1,27 @@
 * {
   margin: 0;
   padding: 0;
-  outline: 0;
   box-sizing: border-box;
-
-  outline: 0 !important;
 }
-.py-12 {
-    padding-top: 12px;
-    padding-bottom: 12px;
-  }
-  
-  .px-50 {
-    padding-left: 50px;
-    padding-right: 50px;
-  }
-  
-  .px-20 {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-  
-  .bg-main {
-    background: #f8eeba;
-  
-  }
   ul,ol{
     list-style:none;
   }
   a{
     text-decoration: none !important;
   }
-  .text-color {
+  .toy-color {
     color: #0b0a0a !important;
   }
-  .t2{
-    color: #9b9bb5;
+  .t2-color {
+    color:#022847 !important;
   }
-  .t1{
-    color:#977f00;
-  }
-  .red{
-    color:#7b0606;
-  }
-  .dm {
-    font-family:'DM Sans';
-  }
-  
   body {
     color: #0b0a0a !important;
     font-family: 'Space Grotesk';
   }
-  
-  
+  .bg-main{
+    background-color: #95c8f2;
+  }
   .fs-51 {
     font-size: 51px;
   }
@@ -134,67 +103,15 @@
   .fs-40 {
     font-size: 40px;
   }
-  .collapse ul li a i{
- transition: 1s;
-  }
-  .collapse ul li a i:hover{
- transform: translatey(-10px);
-  }
-  /* banner start */
-  
-  
-  .swiper {
-    width: 100%;
-  }
-  
-  .swiper-slide {
-    font-family: "Open Sans", sans-serif;
-    background-size: cover;
-    background-position: 100%;
-    min-height: 90vh;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding:50px !important;
-  }
-  .swiper-slide button{
-    color:black;
-    background-color: aliceblue;
-    padding:10px;
-    border-radius:10px;
-    margin-top:20px;
-    width:160px;
-    transition:1s;
-  }
-  .swiper-slide button:hover{
-    background-color:black;
-    color: aliceblue;
-  }
-  .swiper-button-prev{
-    color:gray;
-  }
-  .swiper-button-next{
-    color:gray;
-  }
-  .swiper-button-prev:hover {
-    color: #5d5757;
-    transition: all linear 0.3s;
-  }
-  
-  .swiper-button-next:hover {
-    color: #5d5757;
-    transition: all linear 0.3s;
-  }
-  
-  /* banner end */
-  /* product start */
-  #product{
+ 
+  /* toys start */
+  #toys{
     display:flex;
     flex-wrap: wrap;
     justify-content: space-between;
     
   }
-  .popular-product {
+  .toys {
     padding: 25px;
     border: 1px solid var(--border-color);
     border-radius: 20px;
@@ -203,7 +120,7 @@
    
   }
   
-  .popular-product .top-border {
+  .toys .top-border {
     margin: 0 0 10px 0;
     position: absolute;
     top: 0;
@@ -214,7 +131,7 @@
     z-index: 9;
   }
   
-  .popular-product .top-border span {
+  .toys .top-border span {
     background: var(--primary-color);
     margin: 0;
     font-size: 12px;
@@ -229,38 +146,11 @@
     display: inline-block;
     position: unset;
   }
-  
-  .popular-product .top-border .discount3 {
-    background: #67bcee;
-  }
-  
-  .popular-product .top-border .discount6 {
-    background: #bc911a;
-  }
-  
-  .popular-product .top-border .discount8 {
-    background: #1774b2;
-  }
-  .popular-product .top-border .text {
-    display: inline-block;
-    background: var(--primary-color);
-    font-family: var(--lato);
-    margin: 0;
-    font-size: 12px;
-    line-height: 1;
-    left: unset;
-    border-radius: 0 15px 0 20px;
-    color: #fff;
-    padding: 10px 20px;
-    min-width: 60px;
-    min-height: 20px;
-    margin-left: auto;
-    text-align: center;
-  }
+
   .front-img{
     width: 100%;
     height: 400px;
-    object-fit: contain;
+    object-fit: cover;
   }
   .back-img {
     opacity: 0;
@@ -275,40 +165,40 @@
     overflow: hidden;
   }
   
-  .popular-product:hover .back-img {
+  .toys:hover .back-img {
     opacity: 1;
     visibility: visible; 
     transform: scale(1.2);
     overflow: hidden;
   }
-  .popular-product:hover .product-content a button {
+  .toys:hover .toys-content a button {
     opacity: 1;
     visibility: visible;
   }
   
-  .product-img {
+  .toys-img {
     position: relative;
     object-fit: cover;
     overflow: hidden;
   }
-  .popular-product .product-content .price h5 {
+  .toys .toys-content .price h5 {
     font-family: var(--quicksand);
     font-size: var(--fs-18);
     color: var(--primary-color);
     margin:0 65px;
   }
   
-  .popular-product .product-content .price p {
+  .toys .toys-content .price p {
     color: var(--text-color);
     font-size: var(--fs-16);
     text-decoration: line-through;
     margin-left: 10px;
   }
-  .product-content a{
+  .toys-content a{
     margin:0 64px;
   }
   
-  .product-content a button {
+  .toys-content a button {
     font-size:15px;
     opacity: 0;
     visibility: hidden;
@@ -329,75 +219,21 @@
     transition:0.5s;
   }
   
-  .product-content a button:hover {
+  .toys-content a button:hover {
     background-color: black;
     color:white;
   }
-  .product-content a button i {
+  .toys-content a button i {
     color:black;
     transition:0.5s;
   }
-  .product-content a button:hover i{
+  .toys-content a button:hover i{
     color:rgb(255, 255, 255);
     background-color: #0b0a0a;
   }
   
-  /* product end */
-  .ruffle-img{
-    overflow: hidden;
-    object-fit: cover;
-    transition:1s;
-  }
-  .ruffle-img:hover{
-    transform:scale(1.1);
-  }
-  /* counter start */
-  .counter-cnt button{
-    width:180px;
-    height:50px;
-    margin:0 240px !important;
-    background-color:black;
-    color: white;
-    border: 0;
-    border-radius:5px;
-    transition: 1s;
-  }
-  .counter-cnt button:hover{
-    transform:scale(1.1);
-  }
-  .counter-img{
-    transition: 1s;
-    overflow: hidden;
-    object-fit: cover;
-  }
-  .counter-img:hover{
-    transform:scale(1.1);
-  }
-  /* counter end */
-  /* footer start */
-  .footer ul li a{
-    color:rgb(88, 85, 85);
-  }
-  .footer ul li a:hover{
-    color:rgb(12, 11, 11);
-  }
-  .payment img {
-    transition: 1s;
-  }
-  .payment img:hover{
-    transform: translateY(-10px);
-  }
-  .pay a i{
-    margin-right:20px;
-    color: #0b0a0a;
-    transition: 1s;
-  }
-  .pay a i:hover{
-    transform: translateY(-10px);
-  }
-  /* footer end */
-
-
+  /* toys end */
+ 
 
   /* cart */
   .shopping-cart {
@@ -418,14 +254,14 @@
       width: 200px;
       margin: 30px auto;
       padding: 10px 20px;
-      background-color:#f5e698;
-      color: #000000 ;
+      background-color:#052741;
+
       border: none ;
       border-radius: 5px;
       cursor: pointer;
   }
   .checkout:hover {
-      background-color:#f4e28b;
+      background-color:#0b2239;
   }
   /* cart */
 

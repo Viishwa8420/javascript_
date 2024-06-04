@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add to cart</title>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/all.min.css" rel="stylesheet">
+    <link href="assets/css/font.css" rel="stylesheet">
+    <link rel="icon" href="assets/img/toys.png" sizes="32x32">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-main">
+        <div class="container-fluid d-flex justify-content-center h-100 ">
+            <a class="navbar-brand fw-bold  toy-color fs-28 ms-4" href="#"><img src="assets/img/toy-shop.png"
+                    width="100px" height="100px"></a>
+        </div>
+    </nav>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="main p-4">
+                    <ul class="d-flex justify-content-between ">
+                        <li>
+                            <h1 class="t2-color">
+                                Shop for your muchkins !
+                            </h1>
+                        </li>
+                        <li class="fs-26 t2-color"><a href="cart.html" class="t2-color"><i
+                                    class="fa-solid fa-cart-shopping"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="toys" class="container">
+        <div class="row">
+
+        </div>
+    </section>
+    <section class="footer  bg-main">
+        <div class="container">
+            <div class="row">
+                <div class="content d-flex align-content-center justify-content-center">
+                
+                       <p class="t2-color p-2 "> copy right reserved
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script>
+        let toys = [
+            {
+                id: 1,
+                name: "Bunny",
+                price: "$23.00",
+                image: "assets/img/pic-1.jpeg",
+                Image: "assets/img/pic-2.jpeg",
+                quantity: 1
+            },
+            {
+                id: 2,
+                name: "Brown-Teddy",
+                price: "$27.00",
+                image: "assets/img/pic-3.jpeg",
+                Image: "assets/img/pic-4.jpeg",
+                quantity: 1
+            },
+            {
+                id: 3,
+                name: "Cute Teddy",
+                price: "$53.00",
+                image: "assets/img/pic-5.jpeg",
+                Image: "assets/img/pic-6.jpeg",
+                quantity: 1
+            },
+            {
+                id: 4,
+                name: "Teddy Bear",
+                price: "$40.00",
+                image: "assets/img/pic-7.jpeg",
+                Image: "assets/img/pic-8.jpeg",
+                quantity: 1
+            },
+            {
+                id: 5,
+                name: "Gaint Teddy",
+                price: "$65.00",
+                image: "assets/img/pic-9.jpg",
+                Image: "assets/img/pic-10.jpeg",
+                quantity: 1
+            },
+            {
+                id: 6,
+                name: "Toys Backet",
+                price: "$79.00",
+                image: "assets/img/pic-11.jpeg",
+                Image: "assets/img/pic-12.jpeg",
+                quantity: 1
+            },
+            {
+                id: 7,
+                name: "Christmus Deer",
+                price: "$57.00",
+                image: "assets/img/pic-13.jpeg",
+                Image: "assets/img/pic-14.jpeg",
+                quantity: 1
+            },
+            {
+                id: 8,
+                name: "Giraffe",
+                price: "$85.00",
+                image: "assets/img/pic-15.jpeg",
+                Image: "assets/img/pic-16.jpeg",
+                quantity: 1
+            },
+            {
+                id: 9,
+                name: "Small White Bear",
+                price: "$90.00",
+                image: "assets/img/pic-17.jpeg",
+                Image: "assets/img/pic-18.jpeg",
+                quantity: 1
+            },
+            {
+                id: 10,
+                name: "Gaint Bear",
+                price: "$45.00",
+                image: "assets/img/pic-19.jpeg",
+                Image: "assets/img/pic-20.jpeg",
+                quantity: 1
+            },
+            {
+                id: 11,
+                name: "Cute Handy Toy",
+                price: "$68.00",
+                image: "assets/img/pic-21.jpeg",
+                Image: "assets/img/pic-22.jpeg",
+                quantity: 1
+            },
+            {
+                id: 12,
+                name: "Cute Handy Toy",
+                price: "$68.00",
+                image: "assets/img/pic-23.jpeg",
+                Image: "assets/img/pic-24.jpeg",
+                quantity: 1
+            },
+            {
+                id: 13,
+                name: "Cute Handy Bear",
+                price: "$20.00",
+                image: "assets/img/pic-25.jpeg",
+                Image: "assets/img/pic-26.jpeg",
+                quantity: 1
+            },
+            {
+                id: 14,
+                name: "Teddy Bear",
+                price: "$46.00",
+                image: "assets/img/pic-27.jpeg",
+                Image: "assets/img/pic-28.jpeg",
+                quantity: 1
+            },
+            {
+                id: 15,
+                name: "Teddys",
+                price: "$75.00",
+                image: "assets/img/pic-29.jpeg",
+                Image: "assets/img/pic-30.jpeg",
+                quantity: 1
+            },
+            {
+                id: 16,
+                name: "Cute Bunny",
+                price: "$75.00",
+                image: "assets/img/pic-31.jpeg",
+                Image: "assets/img/pic-32.jpeg",
+                quantity: 1
+            }
+        ];
+
+        let toysHtml = "";
+        toys.forEach(p => {
+            toysHtml += `
+          
+          <div class="col-3">
+            <div class="toys">
+              <div class="toys-img d-flex justify-center align-center">
+                <img src="${p.image}" class="front-img">
+                <img src="${p.Image}" class="back-img">
+              </div>
+              <div class="toys-content p-2">
+                <a href="#" class="toy-color">${p.name}</a>
+                <div class="d-flex justify-between">
+                  <span class="price">
+                    <h5>${p.price}</h5>
+                  </span>
+                  <a href="#"><button onclick="addCart(${p.id})"><i class="fa-solid fa-cart-shopping"></i></button></a>
+                </div>
+              </div>
+            </div>
+            </div>
+           
+          `;
+        });
+        document.getElementById("toys").innerHTML = toysHtml;
+
+        // Cart functionality
+        let cart = [];
+
+        const addCart = (id) => {
+            let c = toys.find(item => item.id == id);
+            if (c) {
+                cart.push(c);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                alert("Item added to cart!");
+            }
+        }
+    </script>
+</body>
+
+</html>

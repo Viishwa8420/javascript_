@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../image/bac.webp') no-repeat center center fixed;
+    backdrop-filter: blur(3px);
+    background-size: cover;
+    color: #f9f9f9;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    width: 750px !important; 
+    margin: 20px;
+    padding: 20px;
+    background-color: rgba(214, 193, 243, 0.6); 
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(110, 80, 139, 0.3);
+    backdrop-filter: blur(5px); 
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; 
+}
+button.add {
+    position: absolute; 
+    top: -37px;
+    right: 350px;
+    outline: none;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #521686; 
+    color: #fff;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+button.add:hover {
+    background-color:#601d9a; 
+}
+
+.form {
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.2); 
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 15px;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+table th {
+    background-color: rgba(68, 20, 115, 0.934); 
+    font-size: 20px;
+    color: #f9f9f9;
+}
+
+table td {
+    background-color: rgba(74, 3, 141, 0.395); 
+    color: #f9f9f9;
+}
+
+input[type="text"] {
+    text-align: center;
+    margin: 20px 20px;
+    padding: 10px;
+    width: 60%;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+    background-color: rgba(74, 3, 141, 0.395);
+    color: #fff;
+}
+input::placeholder{
+    color: white;
+}
+input[type="checkbox"] {
+    accent-color: #521686 !important;
+}
+input[type="button"] {
+    width: 190px;
+    cursor: pointer;
+    background-color:#521686;
+    color: white;
+    font-size:16px;
+    border: none;
+    border-radius: 25px;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="checkbox"] {
+    transform: scale(1.5);
+    cursor: pointer;
+}
+.edit,.delete{
+    color: #521686;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size:18px;
+}
